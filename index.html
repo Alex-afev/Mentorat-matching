@@ -1,3 +1,52 @@
+<style type="text/css">
+.picto-item {
+  position: relative;  /*les .picto-item deviennent référents*/
+  cursor: help;
+  border-radius: 50%;
+}
+
+/* on génère un élément :after lors du survol et du focus :*/
+
+.picto-item:hover:after,
+.picto-item:focus:after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  position: absolute;
+  top: -2.4em;
+  left: 50%;
+	transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: nowrap;  /* on interdit le retour à la ligne*/
+  padding: 5px 14px;
+  background: #413219;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+/* on génère un second élément en :before pour la flèche */
+
+[aria-label]:hover:before,
+[aria-label]:focus:before {
+  content: "▼";
+  position: absolute;
+  top: -1em;
+	left: 50%;
+	transform: translateX(-50%); /* on centre horizontalement  */
+  font-size: 20px;
+  color: #413219;
+}
+
+/* pas de contour durant le :focus */
+[aria-label]:focus {
+  outline: none;
+}
+
+/* déco */ 
+.picto-item {
+display: inline-flex;
+
+</style>
+
 
  <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
  
@@ -15,42 +64,50 @@
 			 <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
 				<tr>
 					<td>
-						<img style="display:block" src="02.png" width="177px" height="70px" alt="" />
+						<a class="picto-item" href="#" aria-label="a">
+							<img style="display:block" src="02.png" width="177px" height="70px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="06.png" width="177px" height="64px" alt="" />
+						<a class="picto-item" href="#" aria-label="b">
+							<img style="display:block" src="06.png" width="177px" height="64px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="08.png" width="177px" height="87px" alt="" />
+						<a class="picto-item" href="#" aria-label="c">
+							<img style="display:block" src="08.png" width="177px" height="87px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="09.png" width="177px" height="66px" alt="" />
+						<a class="picto-item" href="#" aria-label="d">
+							<img style="display:block" src="09.png" width="177px" height="66px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="10.png" width="177px" height="65px" alt="" />
+						<a class="picto-item" href="#" aria-label="e">
+							<img style="display:block" src="10.png" width="177px" height="65px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="11.png" width="177px" height="64px" alt="" />
+						<a class="picto-item" href="#" aria-label="f">
+							<img style="display:block" src="11.png" width="177px" height="64px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="12.png" width="177px" height="258px" alt="" />
+						<a class="picto-item" href="#" aria-label="g">
+							<img style="display:block" src="12.png" width="177px" height="258px" alt="" /></a>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img style="display:block" src="pix.png" width="177px" height="215px" alt="" />
+						<a class="picto-item" href="#" aria-label="h">
+							<img style="display:block" src="pix.png" width="177px" height="215px" alt="" /></a>
 					</td>
 				</tr>
 			</table>
@@ -60,13 +117,16 @@
 			 <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto; ">
 				<tr>
 					<td>
-						<img style="display:block" src="03.png" width="213px" height="70px" alt="" />
+						<a class="picto-item" href="#" aria-label="i">
+							<img style="display:block" src="03.png" width="213px" height="70px" alt="" /></a>
 					</td>
 					<td>
-						<img style="display:block" src="04.png" width="202px" height="70px" alt="" />
+						<a class="picto-item" href="#" aria-label="j">
+							<img style="display:block" src="04.png" width="202px" height="70px" alt="" /></a>
 					</td>
 					<td>
-						<img style="display:block" src="05.png" width="517px" height="70px" alt="" />
+						<a class="picto-item" href="#" aria-label="k">
+							<img style="display:block" src="05.png" width="517px" height="70px" alt="" /></a>
 					</td>
 				</tr>
 			</table>
@@ -74,21 +134,24 @@
 			<table border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto; vertical-align:top">
 				<tr>
 					<td>
-						<img style="display:block" src="07.png" width="932px" height="380px" alt="" />
+						<a class="picto-item" href="#" aria-label="l">
+							<img style="display:block" src="07.png" width="932px" height="380px" alt="" /></a>
 					</td>
 				</tr>
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto; vertical-align:top">
 				<tr>
 					<td>
-						<img style="display:block" src="13.png" width="932px" height="217px" alt="" />
+						<a class="picto-item" href="#" aria-label="m">
+							<img style="display:block" src="13.png" width="932px" height="217px" alt="" /></a>
 					</td>
 				</tr>
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
 				<tr>
 					<td>
-						<img style="display:block" src="14.png" width="932px" height="222px" alt="" />
+						<a class="picto-item" href="#" aria-label="n">
+							<img style="display:block" src="14.png" width="932px" height="222px" alt="" /></a>
 					</td>
 				</tr>
 			</table>
